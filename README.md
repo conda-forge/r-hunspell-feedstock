@@ -14,14 +14,16 @@ Summary: A spell checker and morphological analyzer library designed for languag
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-hunspell-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-hunspell-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-hunspell-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-hunspell-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-hunspell-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-hunspell-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-hunspell-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-hunspell-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-hunspell-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-hunspell-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-hunspell-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-hunspell-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-hunspell/badges/version.svg)](https://anaconda.org/conda-forge/r-hunspell)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-hunspell/badges/downloads.svg)](https://anaconda.org/conda-forge/r-hunspell)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--hunspell-green.svg)](https://anaconda.org/conda-forge/r-hunspell) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-hunspell.svg)](https://anaconda.org/conda-forge/r-hunspell) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-hunspell.svg)](https://anaconda.org/conda-forge/r-hunspell) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-hunspell.svg)](https://anaconda.org/conda-forge/r-hunspell) |
 
 Installing r-hunspell
 =====================
