@@ -1,5 +1,4 @@
-{% set version = "2.9" %}
-
+{% set version = '2.9' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,52 +9,60 @@ package:
 source:
   fn: hunspell_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/hunspell_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/hunspell/hunspell_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/hunspell_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/hunspell/hunspell_{{ version }}.tar.gz
   sha256: 33e6fa939f3458d151cce1855c6743e850dd736f111ca29668de1a4d48312880
 
 build:
   merge_build_host: True  # [win]
   number: 1
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('cxx') }}        # [unix]
-    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-rcpp
     - r-digest
-
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-rcpp
     - r-digest
 
 test:
   commands:
-    - $R -e "library('hunspell')"  # [not win]
+    - $R -e "library('hunspell')"           # [not win]
     - "\"%R%\" -e \"library('hunspell')\""  # [win]
 
 about:
-  home: https://github.com/ropensci/hunspell#readme
-  license: GPL-2
-  summary: A spell checker and morphological analyzer library designed for languages with rich
-    morphology and complex word compounding or character encoding. The package can check
-    and analyze individual words as well as search for incorrect words within a text,
-    latex, html or xml document. Use the 'devtools' package to spell check R documentation
-    with 'hunspell'.
+  home: https://github.com/ropensci/hunspell#readme (devel) https://hunspell.github.io (upstream)
+  license: GPL-2 | LGPL-2.1 | MPL-1.1
+  summary: Low level spell checker and morphological analyzer based on the  famous 'hunspell'
+    library <https://hunspell.github.io>. The package can analyze or check individual
+    words as well as parse text, latex, html or xml documents. For a more user-friendly
+    interface use the 'spelling' package which builds on this package to automate checking
+    of files, documentation and vignettes in all common formats.
   license_family: GPL2
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
