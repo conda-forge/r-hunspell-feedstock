@@ -1,4 +1,4 @@
-{% set version = '2.9' %}
+{% set version = '3.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,11 +11,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/hunspell_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/hunspell/hunspell_{{ version }}.tar.gz
-  sha256: 33e6fa939f3458d151cce1855c6743e850dd736f111ca29668de1a4d48312880
+  sha256: 01fb9c87f7cf094aaad3b7098378134f2e503286224351e91d08c00b6ee19857
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
+  number: 1000
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
