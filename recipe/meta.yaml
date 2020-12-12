@@ -1,4 +1,4 @@
-{% set version = '3.0' %}
+{% set version = "3.0.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,11 +11,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/hunspell_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/hunspell/hunspell_{{ version }}.tar.gz
-  sha256: 01fb9c87f7cf094aaad3b7098378134f2e503286224351e91d08c00b6ee19857
+  sha256: 1fedbb913bc13c790d2fabfe4edda0a987db3a078bea8c0ca9b777d20af08662
 
 build:
-  merge_build_host: True  # [win]
-  number: 1002
+  merge_build_host: true  # [win]
+  number: 0
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -50,13 +50,10 @@ test:
 about:
   home: https://github.com/ropensci/hunspell#readme (devel) https://hunspell.github.io (upstream)
   license: GPL-2 | LGPL-2.1 | MPL-1.1
-  summary: Low level spell checker and morphological analyzer based on the  famous 'hunspell'
-    library <https://hunspell.github.io>. The package can analyze or check individual
-    words as well as parse text, latex, html or xml documents. For a more user-friendly
-    interface use the 'spelling' package which builds on this package to automate checking
-    of files, documentation and vignettes in all common formats.
+  summary: Low level spell checker and morphological analyzer based on the  famous 'hunspell' library <https://hunspell.github.io>. The package can analyze or check individual words as well as parse text, latex, html or xml documents. For a more user-friendly interface use the 'spelling' package which builds on this package
+    to automate checking of files, documentation and vignettes in all common formats.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
