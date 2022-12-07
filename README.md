@@ -3,7 +3,7 @@ About r-hunspell
 
 Home: https://github.com/ropensci/hunspell#readme (devel) https://hunspell.github.io (upstream)
 
-Package license: GPL-2 | LGPL-2.1 | MPL-1.1
+Package license: GPL-2.0-only OR LGPL-2.1-only OR MPL-1.1
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-hunspell-feedstock/blob/main/LICENSE.txt)
 
