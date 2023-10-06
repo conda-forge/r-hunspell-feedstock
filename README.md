@@ -3,6 +3,7 @@ About r-hunspell-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-hunspell-feedstock/blob/main/LICENSE.txt)
 
+
 About r-hunspell
 ----------------
 
@@ -11,6 +12,7 @@ Home: https://github.com/ropensci/hunspell#readme (devel) https://hunspell.githu
 Package license: GPL-2.0-only OR LGPL-2.1-only OR MPL-1.1
 
 Summary: Low level spell checker and morphological analyzer based on the  famous 'hunspell' library <https://hunspell.github.io>. The package can analyze or check individual words as well as parse text, latex, html or xml documents. For a more user-friendly interface use the 'spelling' package which builds on this package to automate checking of files, documentation and vignettes in all common formats.
+
 About r-hunspell
 ----------------
 
